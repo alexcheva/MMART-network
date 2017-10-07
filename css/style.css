@@ -1,0 +1,143 @@
+body {
+  margin: 20px;
+ background-image: url(https://subtlepatterns.com/patterns/congruent_pentagon.png);
+}
+#avatar{
+ padding: 15px 15px;
+}
+#bd{
+     float: right;
+}
+#major{
+     float: left;
+}
+#interests{
+     text-align: justify;}
+
+
+hr {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 100%;}
+
+#controls{
+          float: right;
+     position: relative;
+     margin-top: -90%;
+}
+.social a{
+     margin: 5px;
+
+}
+#controls a{
+     color: rgb(206, 47, 46);
+}
+.card {
+  width: 250px;
+  margin: 0px 0px 20px 20px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  background-color: white;
+}
+
+.card-block {
+  padding: 15px 15px;
+}
+.card-title {
+     margin-top: 0px;
+}
+h1{ text-align: center;
+  font-weight: 400;}
+
+.container {
+     margin-top: 10px;
+     padding: 10px;
+     background: #EEE;
+       max-width: 320px;
+}
+.container-fluid {
+     wax-width: 500px;
+}
+
+.name{
+     text-transform: capitalize;
+}
+
+.profile {
+     display: inline-block;
+     margin-top: 0px;
+
+     margin: 10px;
+     padding: 10px;
+/*      min-height: 200px; */
+     line-height: 1.5em;
+     width: 230px;
+/*      border: solid 1px grey; */
+     box-shadow: 1px 2px 10px grey;
+
+}
+
+.select, .select:hover, .select:active {
+     font-weight: bold;
+     text-decoration: none !important;
+     background-color: #ddd;
+     border-radius: 3px;
+     padding: 6px;
+     color: black;
+}
+#form {
+     /*float: left;*/
+     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+}
+.content{
+     margin-top: 10px;
+     padding: 10px;
+}
+article{
+     float: right;
+     width: 80%;
+     padding: auto;
+     margin-top: 10px;
+
+}
+.form-control, input {
+     display: inline-block !important;
+     margin-bottom: 5px;
+     width: 300px;
+     vertical-align: middle;
+    background: rgb(235, 231, 193);
+
+}
+label {
+       margin-left: 10px;
+
+}
+#search{
+     width: 500px;
+}
+#genders {
+     width: 150px;
+}
+
+img{
+     width: 100%;
+     height: auto;
+     display: block;
+}
+.fa-envelope-o {
+     color: grey;
+}
+.form-control{
+     text-align: center;
+}
+textarea.form-control {
+  height: auto;
+  wax-width: 300px;}
+  a {
+  color: #2BBBAD;
+}
+.flex_container{
+  display: flex;
+}

@@ -1,0 +1,149 @@
+    1  git
+    2  git
+    3  git clone https://github.com/quindar/quindar-ux.git
+    4  ls
+    5  cd quindar-ux/
+    6  open .
+    7  git clone https://github.com/quindar/quindar-deploy.git
+    8  ifconfig
+    9  10.99.89.53
+   10  ping 10.99.89.53
+   11  exit
+   12  ssh root@Edison_test
+   13  ssh root@10.99.89.53
+   14  ssh root@10.99.89.53
+   15  ssh root@192.168.2.15
+   16  git clone https://https://github.com/vanwars/mmart-168-fall2017.git
+   17  git
+   18  git config --global user.name "Alexandra Lukinicheva"
+   19  git config --global user.email "a.lukinicheva@gmail.com"
+   20  git clone https://https://github.com/vanwars/mmart-168-fall2017.git
+   21  git clone https://github.com/vanwars/mmart-168-fall2017.git
+   22  cd mmart-168-fall2017/hw02
+   23  ls
+   24  open index.html
+   25  pwd
+   26  bash utilities/mmart168-installation.sh
+   27  pwd
+   28  cd ../
+   29  bash utilities/mmart168-installation.sh
+   30  history > alex_install_history.txt
+   31  ls
+   32  git clone https://github.com/vanwars/mmart-168-fall2017.git
+   33  pwd
+   34  mkdir hw
+   35  pwd
+   36  ls
+   37  cd hw
+   38  git clone https://github.com/vanwars/mmart-168-fall2017.git
+   39  cd mmart-168-fall2017/hw03
+   40  ls
+   41  open index.html
+   42  git status
+   43  git commit -am 'Homework 4 updates'
+   44  git push
+   45  git push
+   46  git status
+   47  pwd
+   48  cd ../
+   49  git checkout master
+   50  git pull --rebase upstream master
+   51  git remote show upstream
+   52  git remote show upstream
+   53  pwd
+   54  git
+   55  git remote show origin
+   56  git remote add upstream https://github.com/mmart168/mmart-168-fall2017.git
+   57  git remote show upstream
+   58  git checkout master
+   59  git pull --rebase upstream master
+   60  git branch homework05
+   61  git branch
+   62  git branch
+   63  git
+   64  pwd
+   65  ls
+   66  cd hw
+   67  ls
+   68  cd git
+   69  ls
+   70  cd mmart-168-fall2017
+   71  ls
+   72  git branch
+   73  git branch homework05
+   74  git status
+   75  git
+   76  git status
+   77  git checkout homework 5
+   78  git checkout homework05
+   79  git branch
+   80  git status
+   81  git commit-am 'Homework 5 updates'
+   82  git commit -am 'Homework 5 updates'
+   83  git push
+   84  git push --set-upstream origin homework05
+   85  ls
+   86  git checout master
+   87  y
+   88  git checkout master
+   89  git pull --rebase upstream master
+   90  git checkout homework06
+   91  git branch
+   92  git checkout master
+   93  git pull --rebase upstream master
+   94  git branch homework06
+   95  git checkout homework06
+   96  git branch
+   97  cd ../../
+   98  cd ../
+   99  ls
+  100  mkdir git
+  101  cd git
+  102  mkdir flexbox
+  103  git init
+  104  cd flexbox
+  105  git https://github.com/iamshaunjp/css-flexbox-playlist.git
+  106  git --help
+  107  git clone https://github.com/iamshaunjp/css-flexbox-playlist.git
+  108  ls
+  109  pwd
+  110  cd ../../
+  111  pwd
+  112  ls
+  113  cd Downloads/Final 2/Final
+  114  ls
+  115  git init
+  116  git add
+  117  git add .
+  118  git commit -m "MMART Network first commit"
+  119  git branch
+  120  git remote add origin /Users/alex/Downloads/final/.git/
+  121  git remote -v
+  122  git push -u origin master
+  123  git remote add origin https://github.com/sashaborst/MMART-network.git
+  124  git -u origin master
+  125  pwd
+  126  ls
+  127  cd ../
+  128  cd Final 2
+  129  pwd
+  130  cd ../
+  131  cd final_v2
+  132  ls
+  133  git init
+  134  git commit -m "first commit"
+  135  git remote add origin https://github.com/sashaborst/MMART-network.git
+  136  git remote add origin https://github.com/sashaborst/MMART-network.git
+  137  git push -u origin master
+  138  cd final
+  139  git branch
+  140  git init
+  141  git remote add origin https://github.com/sashaborst/MMART-network.git
+  142  fit push - u origin master
+  143  fit push -u origin master
+  144  git push -u origin master
+  145  git branch
+  146  git commit -m 'first commit'
+  147  git remote add origin https://github.com/sashaborst/MMART-network.git
+  148  git push -u origin master
+  149  history > git-error.txt

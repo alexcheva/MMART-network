@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>MMART@BCC Student Network</title>
+
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.1.1/css/mdb.css">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+  <div ng-app="createApp" ng-controller="ctrlr" class="container-fluid">
+     <h1>MMART Student Network</h1>
+           <br><br>
+
+<!--      <a href="#" ng-click="setActiveInterest('')" ng-class="{ select: activeInterest === '', tag: activeInterest !== '' }">all</a>
+     <span ng-repeat="interest in interests | orderBy" >
+          <a href="#" ng-class="{ select: interest === activeInterest, tag: interest !== activeInterest }" ng-click="setActiveInterest(interest)">{{ interest }}</a>
+     </span>
+     <br>
+     -->
+   <!--  <p></p> -->
+<!--    <a href="#" ng-click="selectedGender('')" ng-class="{ select: selectedGender === '', tag: selectedGender !== '' }">all</a> -->
+<label>Filter by Major:</label>
+          <!-- <div class="btn-group" role="group" aria-label="..."> -->
+          <button type ng-click="selectMajor='Undeclared'" "button" class="btn btn-warning">Undeclared</button>
+          <button type ng-click="selectMajor='Animation Design'" class="btn btn-danger">Animation Design</button>
+          <button type ng-click="selectMajor='Digital Imaging'" class="btn btn-success">Digital Imaging</button>
+          <button type ng-click="selectMajor='Digital Video Arts'" class="btn btn-primary">Digital Video Arts</button>
+          <button type ng-click="selectMajor='Mobile + Web'" class="btn btn-info">Mobile + Web</button>
+          <!-- </div> -->
+          <label>Filter by Gender:</label> <select class="form-control" id="genders" ng-model="selectedGender">
+          <option value="male">male</option>
+          <option value="female">female</option>
+          <option value="gender fluid">gender fluid</option>
+     </select><label> Search:</label><input type="text" id="search" ng-model="searchTerm"><i class="fa fa-search fa-lg" aria-hidden="true"></i>
+     <a type class="btn btn-default" ng-click="selectedGender=''" ng-click="selectMajor=''">Clear search</a><br><br>
+<div class="flex_container">
+<!-- Update Form -->
+     <aside>
+     <form class="container" id="form">
+          <input placeholder="First Name" type="text" class="form-control" ng-model="mmartStudent.first" />
+          <br>
+          <input placeholder="Last Name" type="text" class="form-control" ng-model="mmartStudent.last" />
+          <br>
+          <span class="input-group-addon" id="basic-addon3">Gender</span>
+          <select class="form-control" placeholder="choose one" aria-describedby="basic-addon3" ng-model="mmartStudent.gender" id="gender">
+                  <option value="male">male</option>
+                  <option value="female">female</option>
+                  <option value="gender fluid">gender fluid</option>
+          </select>
+          <br>
+          <span class="input-group-addon" id="basic-addon3">Date of Birth:</span>
+          <input type="date" class="form-control" aria-describedby="basic-addon3" ng-model="mmartStudent.dob" />
+
+          <br>
+          <span class="input-group-addon" id="basic-addon3">Major:</span>
+          <select class="form-control" placeholder="choose one" aria-describedby="basic-addon3" ng-model="mmartStudent.major" id="majors">
+               <option value="Undeclared">Undeclared</option>
+              <option value="Animation Design">Animation Design</option>
+              <option value="Digital Imaging">Digital Imaging</option>
+              <option value="Digital Video Arts">Digital Video Arts</option>
+              <option value="Mobile + Web">Mobile + Web</option>
+           </select>
+          <br>
+          <span class="input-group-addon" id="basic-addon3">Interests:</span>
+          <textarea aria-describedby="basic-addon3" placeholder="Interests will be used as hashtags. For example: photography, visual arts, coding" class="form-control" ng-model="mmartStudent.interests"></textarea>
+          <br>
+          <input placeholder="email@example.com" type="text" class="form-control" ng-model="mmartStudent.email" />
+          <br>
+          <input type="text" placeholder="www.your-website.com" class="form-control" ng-model="mmartStudent.web" />
+          <br>
+          <br>
+
+          <span class="input-group"><span class="input-group-addon" id="basic-addon3"><strong>www.facebook.com/</strong></span>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-model="mmartStudent.fb" /></span>
+          <span class="input-group"><span class="input-group-addon" id="basic-addon3"><strong>www.instagram.com/</strong></span>
+          <input type="text" class="form-control" ng-model="mmartStudent.insta" /></span>
+          <span class="input-group"><span class="input-group-addon" id="basic-addon3"><strong>www.twitter.com/</strong></span>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-model="mmartStudent.twit" /></span>
+          <span class="input-group"><span class="input-group-addon" id="basic-addon3"><strong>www.youtube.com/</strong></span>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-model="mmartStudent.you" /></span>
+          <span class="input-group"><span class="input-group-addon" id="basic-addon3"><strong>www.vimeo.com/</strong></span>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-model="mmartStudent.vim" /></span>
+          <br>
+          <label>Upload Photo:</label>
+          <input type="file" id="image" />
+          <input type="text" placeholder="Paste Image URL" class="form-control" ng-model="mmartStudent.imageURL" /><br>
+          <button class="btn btn-primary" ng-click="save();">Save</button>
+          <button class="btn btn-default" ng-click="clear();">Clear</button>
+     </form>
+   </aside>
+     <!-- Display Data -->
+
+     <!-- div class="profile" ng-repeat="student in mmart | filter: { gender: selectedGender }:true" -->
+     <article id="masonry-grid" >
+      <div class="gutter-sizer">
+      <div class="card grid-item" ng-repeat="student in mmart | filter: { gender: selectedGender }:true | filter: { major: selectMajor }:true | filter: { interests: activeInterest } | filter: searchTerm ">
+        <img class="img-fluid" ng-show="{{student.image === 'undefined' && (student.imageURL === 'undefined' || !student.imageURL)}}" id="avatar" ng-src="http://www.myiconfinder.com/uploads/iconsets/256-256-5d549bce5810acf2482a10b0dc2346fd.png"/>
+          <img class="img-fluid" ng-show="{{student.image}}" ng-src="{{ student.image.items[2].file_path }}" />
+          <img class="img-fluid" ng-show="{{student.imageURL !== 'undefined' }}" ng-src="{{ student.imageURL }}" />
+             <span id="controls"><a ng-click="edit(student)"><i class="fa fa-edit"></i></a>
+              <a ng-click="delete(student._id)"><i class="fa fa-trash"></i></a></span>
+            <div class="card-block">
+              <h4 class="card-title">
+                <strong class="name" ng-show="{{student.first !== undefined}}">{{student.first}} {{student.last}} </strong>
+             <strong class="name" ng-show="{{student.first == undefined}}">{{student.name}} </strong>
+             <!-- controls edit| delete -->
+             <!-- <span ng-show="{{student.gender !== 'male' }}" > <i class="fa fa-venus" ng-show="{{student.gender !== 'Male' }}"></i></span>
+  <span ng-show="{{student.gender !== 'female' }}" ><i class="fa fa-mars" ng-show="{{student.gender !== 'Female' }}"></i></span> -->
+              </h4>
+    <span class="card-text">
+     <span class="card-subtitle text-muted" id="major" ng-show="student.major"><span ng-show="student.major !== 'Undeclared'">
+        <i class="fa fa-graduation-cap"></i> {{ student.major }}<br></span></span>
+     <span id="bd" ng-show="student.dob">
+          <i class="fa fa-birthday-cake" aria-hidden="true"></i>  {{ student.dob | date : 'MMMM d' }}
+          <br>
+    </span>
+          <div id="interests" ng-show="student.interests">
+             <hr><span ng-repeat="interest in student.interests">
+               <a href="#" ng-click="setActiveInterest(interest)">#{{ interest }}</a>
+            </span> <hr>
+           </div>
+    </span>
+    <span ng-show="student.email"><i class="fa fa-envelope"></i> {{ student.email }}  <hr></span>
+    <span ng-show="student.web"><a ng-show="{{student.web !== 'undefined'}}" href="http://{{ student.web }}" target="_blanc"> {{ student.web }}<hr></a> </span>
+
+          <div class="social"><span ng-show="{{student.fb !== 'undefined'}}"><a ng-show="student.fb" href="http://www.facebook.com/{{ student.fb }}" target="_blanc"><i class="fa fa-facebook-square fa-2x"></i></a></span>
+          <span ng-show="{{student.insta !== 'undefined'}}"><a ng-show="student.insta" href="http://www.instagram.com/{{ student.insta }}" target="_blanc"><i class="fa fa-instagram fa-2x"></i></a></span>
+          <span ng-show="{{student.twit !== 'undefined'}}"><a ng-show="student.twit" href="http://www.twitter.com/{{ student.twit }}" target="_blanc"><i class="fa fa-twitter fa-2x"></i></a>
+          <a ng-show="student.vim" href="http://www.vimeo.com/{{ student.vim }}" target="_blanc"><i class="fa fa-vimeo-square fa-2x"></i></a>
+          <a ng-show="student.you" href="http://www.youtube.com/{{ student.you }}" target="_blanc"><i class="fa fa-youtube-square fa-2x"></i></a>
+     </div>
+     </div>
+     </div>
+     </div>
+     </article>
+
+</div>
+</div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+<script type="http://masonry.desandro.com/masonry.pkgd.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+</html>
