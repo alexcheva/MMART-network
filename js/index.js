@@ -22,7 +22,7 @@ app.controller("ctrlr", function($scope, $http) {
      $scope.getPhoto = function (student) {
           if (student.imageURL) {
                return student.imageURL;
-          } if (student.imageURL === 'undefined') 
+          } if (student.imageURL === 'undefined')
           { return "http://www.myiconfinder.com/uploads/iconsets/256-256-5d549bce5810acf2482a10b0dc2346fd.png";
 
           }  else if (student.image) {
@@ -33,6 +33,7 @@ app.controller("ctrlr", function($scope, $http) {
      };
 
      $scope.clear = function() {
+         console.log('clearing...')
           document.getElementById("form").reset();
           $scope.mmartStudent = null;
      };
@@ -131,10 +132,30 @@ app.controller("ctrlr", function($scope, $http) {
                     $scope.cleanData();
                     console.log($scope.mmart);
                     $scope.makeInterestsList();
+                    $scope.redrawGrid();
                })
                .error(function(data) {
                     alert("error");
                });
+     };
+
+     $scope.$watchGroup([
+            'selectMajor', 'selectedGender', 'activeInterest', 'searchTerm'
+        ], function() {
+         //redraw masonry grid if variables change:
+         $scope.redrawGrid();
+     });
+
+     $scope.redrawGrid = function () {
+         setTimeout(function () {
+             console.log('redrawing grid...');
+             var container = document.querySelector('#masonry-grid');
+             var msnry = new Masonry( container, {
+                   // options
+                   //columnWidth: 300,
+                   itemSelector: '.grid-item'
+             });
+         }, 50);
      };
 
      $scope.makeInterestsList = function() {
@@ -156,11 +177,4 @@ app.controller("ctrlr", function($scope, $http) {
 
      $scope.getData();
 
-});
-// Javascript
-var container = document.querySelector('#masonry-grid');
-var msnry = new Masonry( container, {
-  // options
-  columnWidth: 300,
-  itemSelector: '.grid-item'
 });
