@@ -5,29 +5,31 @@
   <title>MMART@BCC Student Network</title>
 
 
-  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
 <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.1.1/css/mdb.css">
 <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
  <link rel="stylesheet" href="css/style.css">
-
-
 </head>
 
 <body>
   <div ng-app="createApp" ng-controller="ctrlr" class="container-fluid">
      <h1>MMART Student Network</h1>
-           <br><br>
 
-<!--      <a href="#" ng-click="setActiveInterest('')" ng-class="{ select: activeInterest === '', tag: activeInterest !== '' }">all</a>
+      <label>Filter by Interest:</label>
      <span ng-repeat="interest in interests | orderBy" >
-          <a href="#" ng-class="{ select: interest === activeInterest, tag: interest !== activeInterest }" ng-click="setActiveInterest(interest)">{{ interest }}</a>
+    
+          <a class="hashtags" href="#" ng-class="{ select: interest === activeInterest, tag: interest !== activeInterest }" ng-click="setActiveInterest(interest)">{{ interest }}</a>
+
      </span>
+     <a id="hash" href="#" ng-click="setActiveInterest('')" ng-class="{ select: activeInterest === '', tag: activeInterest !== '' }">all</a>
      <br>
-     -->
-   <!--  <p></p> -->
-<!--    <a href="#" ng-click="selectedGender('')" ng-class="{ select: selectedGender === '', tag: selectedGender !== '' }">all</a> -->
+    
+<label>Filter by Gender:</label> <select class="form-control" id="genders" ng-model="selectedGender">          <option value="male">male</option>
+          <option value="female">female</option>
+          <option value="gender fluid">gender fluid</option>
+     </select>
 <label>Filter by Major:</label>
           <!-- <div class="btn-group" role="group" aria-label="..."> -->
           <button type ng-click="selectMajor='Undeclared'" "button" class="btn btn-warning">Undeclared</button>
@@ -36,15 +38,13 @@
           <button type ng-click="selectMajor='Digital Video Arts'" class="btn btn-primary">Digital Video Arts</button>
           <button type ng-click="selectMajor='Mobile + Web'" class="btn btn-info">Mobile + Web</button>
           <!-- </div> -->
-          <label>Filter by Gender:</label> <select class="form-control" id="genders" ng-model="selectedGender">
-          <option value="male">male</option>
-          <option value="female">female</option>
-          <option value="gender fluid">gender fluid</option>
-     </select><label> Search:</label><input type="text" id="search" ng-model="searchTerm"><i class="fa fa-search fa-lg" aria-hidden="true"></i>
-     <a type class="btn btn-default" ng-click="selectMajor=undefined;selectedGender=undefined;activeInterest=undefined;searchTerm='';">Clear search</a><br><br>
-<div class="flex_container">
+          
+
+     <div><label>Search:</label><input type="text" id="search" ng-model="searchTerm"><i class="fa fa-search fa-lg" aria-hidden="true"></i>
+     <a type class="btn btn-default" ng-click="selectMajor=undefined;selectedGender=undefined;activeInterest=undefined;searchTerm='';">Clear search</a></div><br>
+<div id="masonry-grid" class="flex_container">
 <!-- Update Form -->
-<!--      <aside>
+    <!--  <aside>
      <form class="container" id="form">
           <input placeholder="First Name" type="text" class="form-control" ng-model="mmartStudent.first" />
           <br>
@@ -100,14 +100,14 @@
      <!-- Display Data -->
 
      <!-- div class="profile" ng-repeat="student in mmart | filter: { gender: selectedGender }:true" -->
-     <article id="masonry-grid" >
+<!--      <article id="masonry-grid" > -->
       <div class="gutter-sizer">
       <div class="card grid-item" on-finish-render="redrawGrid" ng-repeat="student in mmart | filter: { gender: selectedGender }:true | filter: { major: selectMajor }:true | filter: { interests: activeInterest } | filter: searchTerm ">
         <img class="img-fluid" ng-show="{{student.image === 'undefined' && (student.imageURL === 'undefined' || !student.imageURL)}}" id="avatar" ng-src="http://www.myiconfinder.com/uploads/iconsets/256-256-5d549bce5810acf2482a10b0dc2346fd.png"/>
           <img class="img-fluid" ng-show="{{student.image}}" ng-src="{{ student.image.items[2].file_path }}" />
           <img class="img-fluid" ng-show="{{student.imageURL !== 'undefined' }}" ng-src="{{ student.imageURL }}" onerror="this.src='http://www.myiconfinder.com/uploads/iconsets/256-256-5d549bce5810acf2482a10b0dc2346fd.png'" />
-             <span id="controls"><a ng-click="edit(student)"><i class="fa fa-edit"></i></a>
-              <a ng-click="delete(student._id)"><i class="fa fa-trash"></i></a></span>
+<!--              <span id="controls"><a ng-click="edit(student)"><i class="fa fa-edit"></i></a>
+              <a ng-click="delete(student._id)"><i class="fa fa-trash"></i></a></span> -->
             <div class="card-block">
               <h4 class="card-title">
                 <strong class="name" ng-show="{{student.first !== undefined}}">{{student.first}} {{student.last}} </strong>
@@ -141,7 +141,7 @@
      </div>
      </div>
      </div>
-     </article>
+<!--      </article> -->
 
 </div>
 </div>

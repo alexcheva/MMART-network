@@ -14,7 +14,16 @@ body {
 #interests{
      text-align: justify;}
 
-
+.hashtags {
+  background-color: white;
+  padding: 1px;
+  margin: 2px;
+}
+#hash{
+  background-color: #2BBBAD;
+    padding: 1px;
+  margin: 2px;
+}
 hr {
   margin-top: 6px;
   margin-bottom: 6px;
@@ -33,7 +42,7 @@ hr {
      color: rgb(206, 47, 46);
 }
 .card {
-  width: 250px;
+  width: 255px;
   margin: 0px 0px 20px 20px;
   display: inline-block;
   vertical-align: top;
@@ -55,9 +64,6 @@ h1{ text-align: center;
      padding: 10px;
      background: #EEE;
        max-width: 320px;
-}
-.container-fluid {
-     wax-width: 500px;
 }
 
 .name{
@@ -111,7 +117,7 @@ article{
 
 }
 label {
-       margin-left: 10px;
+margin-top: 20px;
 
 }
 #search{
