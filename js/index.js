@@ -155,7 +155,7 @@ app.controller("ctrlr", function($scope, $http) {
                    //columnWidth: 300,
                    itemSelector: '.grid-item'
              });
-         }, 50);
+         }, 500);
      };
 
      $scope.makeInterestsList = function() {

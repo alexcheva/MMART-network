@@ -44,7 +44,7 @@
      <a type class="btn btn-default" ng-click="selectMajor=undefined;selectedGender=undefined;activeInterest=undefined;searchTerm='';">Clear search</a><br><br>
 <div class="flex_container">
 <!-- Update Form -->
-     <aside>
+<!--      <aside>
      <form class="container" id="form">
           <input placeholder="First Name" type="text" class="form-control" ng-model="mmartStudent.first" />
           <br>
@@ -96,7 +96,7 @@
           <button class="btn btn-primary" ng-click="save();">Save</button>
           <button class="btn btn-default" ng-click="clear();">Clear</button>
      </form>
-   </aside>
+   </aside> -->
      <!-- Display Data -->
 
      <!-- div class="profile" ng-repeat="student in mmart | filter: { gender: selectedGender }:true" -->
@@ -105,7 +105,7 @@
       <div class="card grid-item" on-finish-render="redrawGrid" ng-repeat="student in mmart | filter: { gender: selectedGender }:true | filter: { major: selectMajor }:true | filter: { interests: activeInterest } | filter: searchTerm ">
         <img class="img-fluid" ng-show="{{student.image === 'undefined' && (student.imageURL === 'undefined' || !student.imageURL)}}" id="avatar" ng-src="http://www.myiconfinder.com/uploads/iconsets/256-256-5d549bce5810acf2482a10b0dc2346fd.png"/>
           <img class="img-fluid" ng-show="{{student.image}}" ng-src="{{ student.image.items[2].file_path }}" />
-          <img class="img-fluid" ng-show="{{student.imageURL !== 'undefined' }}" ng-src="{{ student.imageURL }}" />
+          <img class="img-fluid" ng-show="{{student.imageURL !== 'undefined' }}" ng-src="{{ student.imageURL }}" onerror="this.src='http://www.myiconfinder.com/uploads/iconsets/256-256-5d549bce5810acf2482a10b0dc2346fd.png'" />
              <span id="controls"><a ng-click="edit(student)"><i class="fa fa-edit"></i></a>
               <a ng-click="delete(student._id)"><i class="fa fa-trash"></i></a></span>
             <div class="card-block">
